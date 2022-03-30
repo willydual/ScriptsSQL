@@ -1,14 +1,3 @@
-
-
-CREATE TABLE producto
-(
-idProducto int not null primary key identity(1,1),
-nombre varchar(100),
-codigo varchar(100),
-categoria varchar(100),
-precio money
-);
-
 CREATE PROCEDURE SP_INSERTUPDATEDELETE (  @IDPRODUCTO      INTEGER,
                                           @NOMBRE          varchar(100),
                                           @CODIGO                   varchar(8),
@@ -43,7 +32,7 @@ AS
                    codigo = @CODIGO,
                    categoria = @CATEGORIA,
                    precio = @PRECIO
-            WHERE  idproducto = @IDPRODUCTO
+            WHERE  idProducto = @IDPRODUCTO
         END
       ELSE IF @StatementType = 'Delete'
         BEGIN
